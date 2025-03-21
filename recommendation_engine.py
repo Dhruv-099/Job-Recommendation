@@ -10,12 +10,18 @@ def recommend_roles(input_role, roles_data, top_n=3):
     recommended_roles = recommended_roles.sort_values(by='similarity', ascending=False).head(top_n)
     return recommended_roles['role'].tolist()
 roles_data = pd.DataFrame({
-    'role': ['Data Scientist', 'ML Engineer', 'Data Analyst', 'AI Researcher', 'Software Engineer'],
+    'role': ['Data Scientist', 'ML Engineer', 'Data Analyst', 'AI Researcher', 'Software Engineer',
+             'Data Engineer', 'BI Analyst', 'Product Manager', 'DevOps Engineer', 'Cybersecurity Analyst'],
     'skills': [
-        {'Python', 'Machine Learning', 'Statistics'},
-        {'Python', 'Deep Learning', 'TensorFlow'},
-        {'SQL', 'Excel', 'Data Visualization'},
-        {'Deep Learning', 'Neural Networks', 'Research'},
-        {'Java', 'Software Development', 'Algorithms'}
+        {'Python', 'Machine Learning', 'Statistics', 'SQL'},
+        {'Python', 'Deep Learning', 'TensorFlow', 'PyTorch'},
+        {'SQL', 'Excel', 'Data Visualization', 'Business Intelligence'},
+        {'Deep Learning', 'Neural Networks', 'Research', 'Python'},
+        {'Java', 'Software Development', 'Algorithms', 'System Design'},
+        {'SQL', 'ETL', 'Data Warehousing', 'Big Data'},
+        {'Power BI', 'SQL', 'Dashboarding', 'Data Analysis'},
+        {'Product Strategy', 'Agile', 'Stakeholder Management', 'Data Analytics'},
+        {'CI/CD', 'Kubernetes', 'Cloud Computing', 'Infrastructure as Code'},
+        {'Network Security', 'Penetration Testing', 'Risk Management', 'Cybersecurity Fundamentals'}
     ]
 })
